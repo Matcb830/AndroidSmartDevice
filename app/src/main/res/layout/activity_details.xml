@@ -4,29 +4,107 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailsActivity">
+    tools:context=".DeviceActivity">
+
+    <ImageView
+        android:id="@+id/ledImage3"
+        android:layout_width="100dp"
+        android:layout_height="85dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/ledImage2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ledImage2"
+        app:srcCompat="@drawable/led" />
+
+    <ImageView
+        android:id="@+id/ledImage2"
+        android:layout_width="100dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="76dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@+id/ledImage3"
+        app:layout_constraintStart_toEndOf="@+id/ledImage1"
+        app:layout_constraintTop_toBottomOf="@+id/ledDisplayText"
+        app:srcCompat="@drawable/led" />
 
     <TextView
-        android:id="@+id/TitleLoader"
+        android:id="@+id/deviceConnectedStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Connexion au BLE en cours"
-        android:textColor="#0A3C8A"
-        android:textSize="20sp"
+        android:layout_marginStart="171dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="182dp"
+        android:text="BLE"
+        android:textColor="#3F51B5"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="52dp" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ledDisplayText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="54dp"
+        android:text="Connexion en cours ..."
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/deviceConnectedStatus" />
+
+    <TextView
+        android:id="@+id/subscribeText"
+        android:layout_width="195dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="50dp"
+        android:text="Abonnez vous pour recevoir le nombre d'incrémentation"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ledImage1" />
+
+    <CheckBox
+        android:id="@+id/subscriptionCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:text="Recevoir"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/subscribeText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/subscribeText"
+        app:layout_constraintTop_toTopOf="@+id/subscribeText" />
+
+    <ImageView
+        android:id="@+id/ledImage1"
+        android:layout_width="100dp"
+        android:layout_height="85dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/ledImage2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ledImage2"
+        app:srcCompat="@drawable/led" />
 
     <ProgressBar
-        android:id="@+id/loader"
+        android:id="@+id/connectionProgress"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="180dp"
+        android:layout_height="186dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/clickCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="36dp"
-        android:indeterminate="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        android:layout_marginStart="10dp"
+        android:text="Nombre de click :"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TitleLoader" />
+        app:layout_constraintTop_toBottomOf="@+id/subscribeText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

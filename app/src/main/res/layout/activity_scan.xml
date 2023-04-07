@@ -3,57 +3,56 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/ListDevice"
-        android:layout_width="400dp"
-        android:layout_height="600dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <ImageButton
-        android:id="@+id/ButtonScan"
-        android:layout_width="105dp"
-        android:layout_height="84dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:backgroundTint="#FEFEFE"
-        app:tint="#0A3C8B"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_media_play"
-        tools:ignore="MissingConstraints" />
+    android:layout_height="match_parent"
+    tools:context=".ScanActivity">
 
     <TextView
-        android:id="@+id/scanTitle"
-        android:layout_width="294dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
-        android:text="Lancer le Scan BLE"
-        android:textAlignment="viewStart"
-        android:textColor="#0A3C8A"
-        android:textSize="20sp"
-        app:autoSizeTextType="uniform"
-        app:layout_constraintEnd_toStartOf="@+id/ButtonScan"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:id="@+id/instructionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="20dp"
+        android:text="Lancer le scan BLE"
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toStartOf="@+id/startPauseButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ProgressBar
-        android:id="@+id/progressBar"
+        android:id="@+id/progressIndicator"
         style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="406dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="84dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:progressTint="@color/design_default_color_primary"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/instructionText" />
+
+    <ImageButton
+        android:id="@+id/startPauseButton"
+        android:layout_width="66dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="60dp"
+        android:scaleType="centerInside"
+        app:layout_constraintStart_toEndOf="@+id/instructionText"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/start" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/liste"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressIndicator" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

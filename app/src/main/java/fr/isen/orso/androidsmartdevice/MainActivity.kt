@@ -1,57 +1,22 @@
 package fr.isen.orso.androidsmartdevice
 
 import android.content.Intent
-import android.util.Log
-import fr.isen.orso.androidsmartdevice.databinding.ActivityMainBinding
-import android.bluetooth.BluetoothGattCallback
 import androidx.appcompat.app.AppCompatActivity
-import android.bluetooth.BluetoothGatt
-import android.bluetooth.BluetoothProfile
-import android.bluetooth.BluetoothDevice
-import android.annotation.SuppressLint
 import android.os.Bundle
-import android.widget.ProgressBar
-import android.widget.Toast
+import fr.isen.orso.androidsmartdevice.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
 
-    //Initialiser l'activité
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+    private lateinit var bindingInstance: ActivityMainBinding
 
-        //Gestionnaire d'événements pour le bouton de démarrage
-        binding.startButton.setOnClickListener {
-            //Démarrer ScanActivity
-            startActivity(Intent(this, ScanActivity::class.java))
+    override fun onCreate(savedState: Bundle?) {
+        super.onCreate(savedState)
+        bindingInstance = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(bindingInstance.root)
+
+        bindingInstance.start.setOnClickListener {
+            val newIntent = Intent(this, ScanActivity::class.java)
+            startActivity(newIntent)
         }
-    }
-
-    // Fonctions de cycle
-    override fun onStart() {
-        super.onStart()
-        Log.d("MainActivity", "onStart")
-    }
-
-    override fun onResume() {
-        super.onResume()
-        Log.d("MainActivity", "onResume")
-    }
-
-    override fun onPause() {
-        Log.d("MainActivity", "onPause")
-        super.onPause()
-    }
-
-    override fun onStop() {
-        Log.d("MainActivity", "onStop")
-        super.onStop()
-    }
-
-    override fun onDestroy() {
-        Log.d("MainActivity", "onDestroy")
-        super.onDestroy()
     }
 }

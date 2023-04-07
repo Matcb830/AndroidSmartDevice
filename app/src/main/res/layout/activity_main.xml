@@ -4,68 +4,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    android:backgroundTint="#FFFFFF"
-    android:foregroundTint="#0A3D90">
+    tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/Title"
+        android:id="@+id/Titre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif"
-        android:text="Bienvenue dans votre application SmartDevice"
+        android:layout_marginTop="50dp"
+        android:text="Bienvenue dans votre application Smart Device"
         android:textAlignment="center"
-        android:textColor="#0A3D8E"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/description"
-        app:layout_constraintStart_toStartOf="@+id/description"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.08" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="#0CA9E6"
+        android:textColorLink="#3DDDCA"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/description"
-        android:layout_width="375dp"
-        android:layout_height="80dp"
-        android:background="#FEFEFE"
-        android:text="Cliquez pour demarer les interactions avec des appareils BLE autour de vous. "
+        android:layout_width="368dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="60dp"
+        android:text="Pour démarer vos interactions avec les appareils BLE environants cliquer sur commencer"
         android:textAlignment="center"
-        android:textSize="20sp"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Titre" />
+
+    <Button
+        android:id="@+id/start"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        android:text="Commencer"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.555"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.247" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="98dp"
-        android:layout_height="193dp"
-        app:tint="#0A3D8F"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="157dp"
+        android:layout_height="156dp"
+        android:layout_marginTop="36dp"
+        android:outlineProvider="none"
+        app:layout_constraintBottom_toTopOf="@+id/start"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.559"
-        app:srcCompat="@android:drawable/stat_sys_data_bluetooth" />
-
-    <Button
-        android:id="@+id/startButton"
-        android:layout_width="356dp"
-        android:layout_height="48dp"
-        android:backgroundTint="#0A3D90"
-        android:text="Commencer"
-        app:iconTint="#B57575"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/description"
-        app:layout_constraintHorizontal_bias="0.578"
-        app:layout_constraintStart_toStartOf="@+id/description"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.934"
-        app:rippleColor="#0A3D8F"
-        app:strokeColor="#0A3C8E" />
+        app:layout_constraintTop_toBottomOf="@+id/description"
+        app:layout_constraintVertical_bias="0.186"
+        app:srcCompat="@drawable/bluetooth" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
